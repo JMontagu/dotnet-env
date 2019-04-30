@@ -8,7 +8,7 @@ dotenv.net is a zero-dependency module that loads environment variables from a .
 
 Big ups to those who have contributed to this library. :clap:
 
-[@bolorundurowb](https://github.com/bolorundurowb) [@joliveros](https://github.com/joliveros) [@vizeke](https://github.com/vizeke) [@merqlove](https://github.com/merqlove) [@tracker1](https://github.com/tracker1)  [@NaturalWill](https://github.com/NaturalWill)
+[@bolorundurowb](https://github.com/bolorundurowb) [@joliveros](https://github.com/joliveros) [@vizeke](https://github.com/vizeke) [@merqlove](https://github.com/merqlove) [@tracker1](https://github.com/tracker1) [@NaturalWill](https://github.com/NaturalWill)
 
 ## Usage
 
@@ -35,6 +35,7 @@ paket add dotenv.net
 Create a file with no filename and an extension of `.env`.
 
 A sample `.env` file would look like this:
+
 ```text
 DB_HOST=localhost
 DB_USER=root
@@ -54,7 +55,8 @@ DotEnv.Config();
 ```
 
 the values saved in your `.env` file would be avaibale in your application and can be accessed via
- ```csharp
+
+```csharp
 Environment.GetEnvironmentVariable("DB_HOST"); // would output 'localhost'
 ```
 
@@ -62,7 +64,11 @@ Environment.GetEnvironmentVariable("DB_HOST"); // would output 'localhost'
 
 If using with ASP.NET Core or any other system that uses `IServiceCollection` for its dependency injection, in the `Startup.cs` file
 
-``` csharp
+```csharp
+using dotenv.net.DependencyInjection.Extensions;
+
+...
+
 public void ConfigureServices(IServiceCollection services)
 {
     ...
